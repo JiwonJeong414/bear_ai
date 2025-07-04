@@ -35,7 +35,7 @@ def get_brand_mentions():
         # Query to get brand mention counts (where score > 0)
         brand_mentions = db.session.query(
             BrandScore.brand_name,
-            func.count(BrandScore.id).label('mention_count')
+            func.sum(BrandScore.score).label('mention_count')
         ).filter(BrandScore.score > 0).group_by(BrandScore.brand_name).all()
         
         # Format the results
@@ -63,7 +63,7 @@ def get_brand_mention_count(brand_name):
     try:
         # Query to get mention count for specific brand (where score > 0)
         mention_count = db.session.query(
-            func.count(BrandScore.id)
+            func.sum(BrandScore.score)
         ).filter(
             BrandScore.brand_name == brand_name,
             BrandScore.score > 0
