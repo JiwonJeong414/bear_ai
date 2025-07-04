@@ -7,7 +7,15 @@ import csv
 # Prompts to send to ChatGPT
 prompts = [
     "What are the best running shoes in 2025",
-    "Top performance sneakers for athletes"
+    "Top performance sneakers for athletes",
+    "Most comfortable sneakers for everyday wear",
+    "Best shoes for marathon runners in 2025",
+    "Top-rated basketball shoes this year",
+    "What are the best shoes for trail running",
+    "Best sneakers for flat feet",
+    "Best lightweight shoes for speed workouts",
+    "Most durable sneakers for heavy runners",
+    "What are the trendiest sneakers in 2025"
 ]
 
 # Store results for file output
@@ -95,8 +103,7 @@ def save_to_csv(results, filename="brand_analysis_results.csv"):
                 brand_counts.get('adidas', 0),
                 brand_counts.get('hoka', 0),
                 brand_counts.get('new balance', 0),
-                brand_counts.get('jordan', 0),
-                result['timestamp']
+                brand_counts.get('jordan', 0)
             ])
     print(f"Results saved to {filename}")
     

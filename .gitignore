@@ -47,3 +47,5 @@ htmlcov/
 
 # Pyre type checker
 .pyre/ 
+
+brand_analysis_results.csv
